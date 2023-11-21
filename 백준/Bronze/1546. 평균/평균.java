@@ -14,9 +14,7 @@ public class Main {
             A[i] = sc.nextInt();
         }
         for (int i = 0; i < N; i++) {
-            if (A[i] > max) {
-                max = A[i];
-            }
+            max = (A[i] > max) ? A[i] : max;
             sum = sum + A[i];
         }
         average = (double) (sum * 100) / max / N;
