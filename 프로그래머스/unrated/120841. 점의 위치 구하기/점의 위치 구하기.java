@@ -1,34 +1,36 @@
 class Solution {
     public int solution(int[] dot) {
-      int left_negative = 0;
-        int left_positive = 0;
-        int right_negative = 0;
-        int right_positive = 0;
-        int answer = 0;
+        return findResult(dot);
+    }
 
-        for (int i = 0; i < dot.length; i++) {
+    public int findResult(int[] dot) {
+            int left_negative = 0;
+            int left_positive = 0;
+            int right_negative = 0;
+            int right_positive = 0;
+            int answer = 0;
 
-            if (i == 0) {
-                if (dot[i] <= 0) {
-                    left_negative++;
+            for (int i = 0; i < dot.length; i++) {
+                if (i == 0) {
+                    if (dot[i] < 0) {
+                        left_negative++;
+                    } else {
+                        left_positive++;
+                    }
                 } else {
-                    left_positive++;
-                }
-            } else {
-                if (dot[i] <= 0) {
-                    right_negative ++;
-                } else {
-                    right_positive ++;
+                    if (dot[i] <= 0) {
+                        right_negative ++;
+                    } else {
+                        right_positive ++;
+                    }
                 }
             }
-        }
-        return (findPositon(left_negative,left_positive,right_negative,right_positive));
-
-
-
+            return (findPosition(left_negative,left_positive,right_negative,right_positive));
 
     }
-    public int findPositon(int left_negative,int left_positive, int right_negative, int right_positive) {
+
+    
+    public int findPosition(int left_negative,int left_positive, int right_negative, int right_positive) {
         int answer = 0;
         if (left_negative > 0 && right_negative > 0) {
             answer = 3;
