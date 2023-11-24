@@ -1,4 +1,3 @@
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -6,7 +5,7 @@ import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        BufferedReader sc = new BufferedReader(new InputStreamReader(System.in));
+  BufferedReader sc = new BufferedReader(new InputStreamReader(System.in));
 
        while (true) {
            int n = Integer.parseInt(sc.readLine());
@@ -20,7 +19,7 @@ public class Main {
            prime[1] = false;
 
 
-           for (int i = 2; i < prime.length; i++) {
+           for (int i = 2; i <Math.sqrt(prime.length); i++) {
                if (!prime[i]) continue;
                for (int j = i * 2; j < prime.length; j += i) {
                    prime[j] = false;
