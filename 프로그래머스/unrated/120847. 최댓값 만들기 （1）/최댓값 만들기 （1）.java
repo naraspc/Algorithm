@@ -1,23 +1,20 @@
 class Solution {
     public int solution(int[] numbers) {
-          int sum = 0 ;
+           int first = numbers[0];
+        int second = 0;
 
+        for (int i = 1; i < numbers.length ; i ++) {
+            if ( numbers[i] > first ) {
+                second = first;
+                first = numbers[i];
+            }else if (numbers[i] > second) {
+                        second = numbers[i];
 
-            for (int i = 0; i < numbers.length ; i ++) {
+                }
 
-                for(int j = 0; j < numbers.length ; j ++) {
-
-                    if ( j == i ) {
-                        break;
-                    } else if (numbers[i] * numbers[j] > sum) {
-                        sum = numbers[i] * numbers[j];
-                    } else continue;
-                    
-                    }
 
 
         }
-        return sum;
-
+        return first * second;
     }
 }
